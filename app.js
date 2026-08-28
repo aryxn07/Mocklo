@@ -33,7 +33,7 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/locations", async (req, res) => {
-  
+  const ip = req.ip;
   console.log("IP:", req.ip);
   console.log("Forwarded:", req.headers["x-forwarded-for"]);
 
